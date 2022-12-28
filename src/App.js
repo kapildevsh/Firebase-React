@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Signup from "./components/signup";
+import {Container} from "@mantine/core";
+import AuthProvider from "./Context/AuthContext";
 function App() {
+ //const apikey = process.env.REACT_APP_firebase_apiKey;
   return (
+
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AuthProvider>
+      <Container size="xs" mt={50}>
+     {/* apikey */} 
+     
+      <Signup/>
+      </Container>
+      </AuthProvider>
+      
+      
     </div>
   );
 }
